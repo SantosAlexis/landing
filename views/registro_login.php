@@ -1,3 +1,17 @@
+<p><strong>Pon a prueba tus habilidades</strong></p>
+  <p>Realiza un diagnóstico rápido (menos de 5 minutos) y descubre una <strong>ruta de aprendizaje personalizada</strong> según tu nivel.</p>
+
+  <ul>
+    <li>Fácil y rápido</li>
+    <li>Resultados inmediatos</li>
+    <li>Recomendaciones hechas para ti</li>
+  </ul>
+
+  <p>Si ya tienes cuenta, <strong>inicia sesión</strong> para comenzar tu evaluación.</p>
+  <p>Si aún no la tienes, <strong>regístrate</strong> y empieza ahora mismo.</p>
+  <p>Y si ya realizaste la prueba, ¡puedes <strong>consultar tus resultados</strong> iniciando sesión!</p>
+
+
 <section class="auth-tabs">
     
     <?php if (!empty($_SESSION["login_error"])): ?>
@@ -12,6 +26,8 @@
         <?php unset($_SESSION["register_error"]); ?>
     </div>
 <?php endif; ?>
+    
+  
     
     <div class="tabs-header">
         <button id="loginTab" class="active">Iniciar Sesión</button>

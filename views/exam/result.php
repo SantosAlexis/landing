@@ -1,4 +1,10 @@
-
+<h3>Resultados</h3>
+<p><strong>¡Aquí están tus resultados! </strong></p>
+  <p>Hemos analizado tus respuestas y generado un reporte con:</p>
+  <ul>
+    <li> Tu nivel actual</li>
+    <li>Una ruta de aprendizaje recomendada para ti</li>
+  </ul>
 <h3>📄 Descargar PDF</h3>
 <button onclick="generarPDF()">Descargar Retroalimentación</button>
 <p><em>Nota: Esta revisión detallada solo se mostrará una vez aquí. Pero se guardará en tu archivo de retroalimentación.</em></p>

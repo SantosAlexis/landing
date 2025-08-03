@@ -1,4 +1,8 @@
 <h2>Examen Interactivo</h2>
+
+<p><strong>Contesta esta serie de preguntas 📋</strong></p>
+  <p>Recuerda que <strong>todas son obligatorias</strong> para poder evaluarte correctamente y conocerte mejor.</p>
+
 <form id="examForm" action="index.php?action=home#selfEvalSection" method="POST">
     <?php foreach ($preguntas as $index => $preg): ?>
         <div class="question-slide <?= $index === 0 ? "active" : "" ?>">
