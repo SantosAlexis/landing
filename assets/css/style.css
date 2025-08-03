@@ -1,0 +1,360 @@
+/* Estilos generales */
+:root {
+    --color-bg: #9ed8db;
+    --color-text: #1d3354;
+    --color-primary: #467599;
+    --color-secondary: #e9fff9;
+    --color-accent: #d64045;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* separa logo y nav */
+    padding: 10px 20px;
+    background-color: var(--color-bg);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.logo {
+    width: 100%;
+    max-width: 100px;
+    left: 0px;
+}
+header {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    padding: 10px;
+    text-align: center;
+}
+
+nav {
+    width: 75%;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-flex;
+    margin-right: 20px;
+
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    color: var(--color-text);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition:
+        background-color 0.3s ease,
+        transform 0.2s ease;
+    font-weight: 500;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+.section {
+    display: none;
+    padding: 20px;
+}
+
+.section.active {
+    display: block;
+}
+
+/*Banner Principal*/
+.banner-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.banner-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+    animation: zoomBlur 8s ease-in-out infinite;
+    transform-origin: center;
+}
+
+@keyframes zoomBlur {
+    0% {
+        transform: scale(1);
+        filter: brightness(1) blur(0px);
+    }
+    50% {
+        transform: scale(1.08);
+        filter: brightness(1.1) blur(0px);
+    }
+    100% {
+        transform: scale(1);
+        filter: brightness(1) blur(0px);
+    }
+}
+
+/*Estilo para generar informe con diseño*/
+#pdf-content {
+    /* background-color: var(--color-accent);*/
+    background-color: var(--color-secondary);
+}
+
+/*tarjetas en oferta*/
+card_container {
+    margin: auto;
+}
+
+/*Card Flip*/
+.atl_card {
+    width: 200px;
+    height: 300px;
+    perspective: 1000px; /* Establece la perspectiva para el efecto 3D */
+    transform-style: preserve-3d; /* Mantiene la propiedad 3D para los hijos */
+    transition: transform 0.5s; /* Agrega una transición suave */
+
+    display: inline-block;
+}
+.atl_card img {
+    width: 100%;
+}
+.atl_card span {
+    /*opacity: 0;*/
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 0.5em);
+    display: block;
+    text-align: center;
+    font-size: 1.5em;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    background: radial-gradient(#a62026 0%, #ee2d36 30%, #f17376 100%);
+    width: 1em;
+    height: 1em;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #6c1417;
+    border-radius: 1em;
+    cursor: pointer;
+}
+
+.atl_card_front,
+.atl_card_back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden; /* Evita que el reverso se muestre al principio */
+    display: block;
+    justify-content: center;
+    align-items: center;
+    /*font-size: 18px;*/
+    background: var(--color-secondary);
+    border: 1px solid #ccc;
+}
+.atl_card_girar {
+    animation: latir 1.2s infinite;
+}
+@keyframes latir {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.atl_card_back {
+    transform: rotateY(180deg); /* Gira el reverso 180 grados inicialmente */
+    display: flex;
+    color: var(--color-text);
+}
+.atl_card_back p {
+    text-align: justify;
+    margin: 2% 5%;
+}
+/* Estilo para la tarjeta volteada */
+.atl_card_flipped {
+    transform: rotateY(180deg);
+}
+
+.testimonios {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.testimonios h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.refer_cards-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.refer_card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 250px;
+    transition: transform 0.3s;
+}
+
+.refer_card:hover {
+    transform: scale(1.1);
+}
+
+.refer_card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.refer_card .stars {
+    color: gold;
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/*registro*/
+
+.auth-tabs {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.tabs-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.tabs-header button {
+    flex: 1;
+    padding: 12px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    background-color: #f1f1f1;
+    border-radius: 8px 8px 0 0;
+    transition: background-color 0.3s ease;
+}
+
+.tabs-header button.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.login_card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+input,
+button {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 8px;
+}
+
+.error {
+    background-color: #f8d7da;
+    color: #842029;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+/*examen*/
+
+.question-slide {
+    display: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.question-slide.active {
+    display: block;
+}
+
+.nav-buttons {
+    margin-top: 15px;
+    text-align: right;
+}
+
+.next-btn {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+/* Oculta solo visualmente el radio, pero sigue funcionando */
+input[type="radio"] {
+    display: none;
+}
+
+/* Estilo base del label como tarjeta */
+label.opcion {
+    display: block;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    background-color: #f1f1f1;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Hover visual */
+label.opcion:hover {
+    background-color: #e3f5ff;
+}
+
+/* Cuando el input está seleccionado, cambia estilo del label */
+input[type="radio"]:checked + label.opcion {
+    background-color: #d0f0ff;
+    border-color: var(--color-primary);
+    font-weight: bold;
+    color: var(--color-text);
+}

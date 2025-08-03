@@ -1,0 +1,9 @@
+# Ignorar XAMPP config u otras cosas locales
+*.log
+*.env
+*.sql
+.DS_Store
+node_modules/
+vendor/
+.idea/
+.vscode/

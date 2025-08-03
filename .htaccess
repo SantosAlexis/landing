@@ -1,0 +1,25 @@
+# Habilitar reescritura de URLs
+RewriteEngine On
+RewriteBase /landing/
+
+# Redirigir todas las peticiones a index.php si no es un archivo o directorio existente
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
+
+# Bloquear acceso directo a archivos PHP en carpetas sensibles
+<IfModule mod_rewrite.c>
+    RewriteRule ^(controllers|core|config)\b.*$ - [F,L]
+</IfModule>
+
+# Opcional: proteger config.php directamente
+<Files "config.php">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Opcional: proteger .htaccess
+<Files ".htaccess">
+    Order Allow,Deny
+    Deny from all
+</Files>
